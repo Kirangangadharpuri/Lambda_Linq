@@ -31,18 +31,21 @@ namespace LambdaLinqProblem
         public void Count_GroupBy(List<ProductReview> products)
         {
             var result = products.GroupBy(x => x.ProductId);
-            var records =products.GroupBy(x => x.ProductId).Select(x=> new { ProductId = x.Key, Count=x.Count() });
             foreach(var rec in result)
             {
                 Console.WriteLine(rec.Key+ " "+ rec.Count());
 
             }
+            Console.WriteLine("********Linq*********");
+            var records = products.GroupBy(x => x.ProductId).Select(x => new { ProductId = x.Key, Count = x.Count() });
             foreach (var record in records)
             {
                 Console.WriteLine(record.ProductId + " " + record.Count);
 
             }
+
         }
+       
         public void Display(IEnumerable<ProductReview> result)
         {
             foreach (var item in result)

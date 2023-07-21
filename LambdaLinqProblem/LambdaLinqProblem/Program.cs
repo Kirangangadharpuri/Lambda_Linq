@@ -61,6 +61,7 @@ namespace LambdaLinqProblem
                         case 3 :
                         management.Count_GroupBy(list);
                         break;
+                    
                 }
             }
         }
