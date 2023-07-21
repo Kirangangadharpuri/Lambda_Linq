@@ -48,6 +48,7 @@ namespace LambdaLinqProblem
                 Console.WriteLine("2- take ProductId 1, 4, 9 greater than 3");
                 Console.WriteLine("3- total count group by product Id");
                 Console.WriteLine("4- Retrive only ProductId and Review");
+                Console.WriteLine("5- Skip top 5 Records");
                 Console.WriteLine("Choose obove oprion");
                 int option=Convert.ToInt32(Console.ReadLine());
                 switch(option)

@@ -63,7 +63,12 @@ namespace LambdaLinqProblem
         {
             var result = products.OrderByDescending(x => x.Rating).Skip(5);
             Display(result);
-           
+            Console.WriteLine("*********** Linq *************");
+            var record = (from product in products select product).Skip(5);
+            foreach (var rec in record)
+            {
+                Console.WriteLine(rec.ProductId + " " + rec.UserId + " " + rec.Rating + " " + rec.Review + " " + rec.IsLike);
+            }
         }
         public void Display(IEnumerable<ProductReview> result)
         {
