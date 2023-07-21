@@ -21,7 +21,12 @@ namespace LambdaLinqProblem
         public void ProductRating(List<ProductReview> products)
         {
             var result = products.Where(x => x.Rating > 3 && (x.ProductId == 1 || x.ProductId == 4 || x.ProductId == 9));
+            var records= from product in products where (product.ProductId==1 || product.ProductId==4 || product.ProductId==9) && product.Rating>3 select product;
             Display(result);
+            foreach (var rec in records)
+            {
+                Console.WriteLine(rec.ProductId + " " + rec.UserId + " " + rec.Rating + " " + rec.Review + " " + rec.IsLike);
+            }
         }
         public void Display(IEnumerable<ProductReview> result)
         {
@@ -30,5 +35,6 @@ namespace LambdaLinqProblem
                 Console.WriteLine(item.ProductId + " " + item.UserId + " " + item.Rating + " " + item.Review + " " + item.IsLike);
             }
         }
+
     }
 }
