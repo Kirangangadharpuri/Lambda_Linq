@@ -65,6 +65,9 @@ namespace LambdaLinqProblem
                     case 4:
                         management.ProductId_Review(list);
                         break;
+                    case 5:
+                        management.SkipTopFive(list);
+                        break;
                 }
             }
         }

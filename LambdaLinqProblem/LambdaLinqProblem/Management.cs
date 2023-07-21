@@ -59,6 +59,12 @@ namespace LambdaLinqProblem
                 Console.WriteLine(product.ProductId + "  " + product.Review);
             }
         }
+        public void SkipTopFive(List<ProductReview> products)
+        {
+            var result = products.OrderByDescending(x => x.Rating).Skip(5);
+            Display(result);
+           
+        }
         public void Display(IEnumerable<ProductReview> result)
         {
             foreach (var item in result)
