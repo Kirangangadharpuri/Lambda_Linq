@@ -17,12 +17,12 @@ namespace LambdaLinqProblem
                 new ProductReview(){ ProductId=1,UserId=101, Rating=5, Review="Very Good",IsLike=true },
                 new ProductReview(){ ProductId=2,UserId=102, Rating=4, Review="Good",IsLike=true },
                 new ProductReview(){ ProductId=3,UserId=103, Rating=4, Review="Good",IsLike=true },
-                new ProductReview(){ ProductId=4,UserId=104, Rating=5, Review="Very Good",IsLike=true },
+                new ProductReview(){ ProductId=4,UserId=104, Rating=3, Review="Very Good",IsLike=true },
                 new ProductReview(){ ProductId=5,UserId=105, Rating=2, Review="Poor",IsLike=false },
-                new ProductReview(){ ProductId=6,UserId=106, Rating=3, Review="Average",IsLike=false },
+                new ProductReview(){ ProductId=6,UserId=106, Rating=3, Review="Very Good",IsLike=false },
                 new ProductReview(){ ProductId=7,UserId=107, Rating=4, Review="Good",IsLike=true },
                 new ProductReview(){ ProductId=8,UserId=108, Rating=5, Review="Very Good",IsLike=true },
-                new ProductReview(){ ProductId=9,UserId=109, Rating=5, Review="Very Good",IsLike=true },
+                new ProductReview(){ ProductId=9,UserId=109, Rating=2, Review="Poor",IsLike=true },
                 new ProductReview(){ ProductId=10,UserId=110, Rating=4, Review="Good",IsLike=true },
                 new ProductReview(){ ProductId=11,UserId=111, Rating=3, Review="Average",IsLike=false },
                 new ProductReview(){ ProductId=12,UserId=112, Rating=2, Review="Poor",IsLike=false },
@@ -34,7 +34,7 @@ namespace LambdaLinqProblem
                 new ProductReview(){ ProductId=5,UserId=118, Rating=2, Review="Poor",IsLike=false },
                 new ProductReview(){ ProductId=5,UserId=119, Rating=5, Review="Very Good",IsLike=true },
                 new ProductReview(){ ProductId=2,UserId=120, Rating=4, Review="Good",   IsLike=true },
-                new ProductReview(){ ProductId=1,UserId=121, Rating=4, Review="Good",IsLike=true },
+                new ProductReview(){ ProductId=10,UserId=121, Rating=4, Review="Good",IsLike=true },
                 new ProductReview(){ ProductId=2,UserId=122, Rating=5, Review="Very Good",IsLike=true },
                 new ProductReview(){ ProductId=3,UserId=123, Rating=5, Review="Very Good",IsLike=true },
                 new ProductReview(){ ProductId=4,UserId=124, Rating=5, Review="Very Good",IsLike=true },
@@ -45,13 +45,18 @@ namespace LambdaLinqProblem
             {
 
                 Console.WriteLine("1-Top three ratings");
+                Console.WriteLine("2- take ProductId 1, 4, 9 greater than 3");
                 Console.WriteLine("Choose obove oprion");
                 int option=Convert.ToInt32(Console.ReadLine());
                 switch(option)
                 {
                     case 1 :
                         management.TopThreeRecord(list);
+                        management.Display(list);
                         break; 
+                        case 2 :    
+                        management.ProductRating(list);
+                        break;
                 }
             }
         }
