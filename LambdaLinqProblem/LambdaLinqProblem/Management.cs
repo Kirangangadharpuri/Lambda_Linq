@@ -45,7 +45,20 @@ namespace LambdaLinqProblem
             }
 
         }
-       
+        public void ProductId_Review(List<ProductReview> products)
+        {
+            var result = products.Select(x => new { x.ProductId, x.Review });
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.ProductId + " " + item.Review);
+            }
+            Console.WriteLine("************* Linq ************");
+            var record = from product in products select new {product.ProductId, product.Review };
+            foreach (var product in record)
+            {
+                Console.WriteLine(product.ProductId + "  " + product.Review);
+            }
+        }
         public void Display(IEnumerable<ProductReview> result)
         {
             foreach (var item in result)

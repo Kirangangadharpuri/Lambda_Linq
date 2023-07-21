@@ -47,6 +47,7 @@ namespace LambdaLinqProblem
                 Console.WriteLine("1-Top three ratings");
                 Console.WriteLine("2- take ProductId 1, 4, 9 greater than 3");
                 Console.WriteLine("3- total count group by product Id");
+                Console.WriteLine("4- Retrive only ProductId and Review");
                 Console.WriteLine("Choose obove oprion");
                 int option=Convert.ToInt32(Console.ReadLine());
                 switch(option)
@@ -55,13 +56,15 @@ namespace LambdaLinqProblem
                         management.TopThreeRecord(list);
                         management.Display(list);
                         break; 
-                        case 2 :    
+                    case 2 :    
                         management.ProductRating(list);
                         break;
-                        case 3 :
+                    case 3 :
                         management.Count_GroupBy(list);
                         break;
-                    
+                    case 4:
+                        management.ProductId_Review(list);
+                        break;
                 }
             }
         }
