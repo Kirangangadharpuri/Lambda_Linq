@@ -10,11 +10,18 @@ namespace LambdaLinqProblem
     {
         public void TopThreeRecord(List<ProductReview> products)
         {
-            var result = products.OrderByDescending(x => x.Rating).Take(3); 
+            var result = products.OrderByDescending(x => x.Rating).Take(3);
             foreach (var item in result)
             {
-             
-                Console.WriteLine(item.ProductId+" "+item.UserId+" "+item.Rating+" "+item.Review+" "+item.IsLike);
+
+                Console.WriteLine(item.ProductId + " " + item.UserId + " " + item.Rating + " " + item.Review + " " + item.IsLike);
+            }
+            var record = (from product in products orderby product.Review descending select product).Take(3);
+            //firstly sort data in descending order and then print top 3 records.
+            foreach (var item in record)
+            {
+
+                Console.WriteLine(item.ProductId + " " + item.UserId + " " + item.Rating + " " + item.Review + " " + item.IsLike);
             }
         }
     }
