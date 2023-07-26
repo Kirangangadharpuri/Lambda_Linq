@@ -70,6 +70,20 @@ namespace LambdaLinqProblem
                 Console.WriteLine(rec.ProductId + " " + rec.UserId + " " + rec.Rating + " " + rec.Review + " " + rec.IsLike);
             }
         }
+        public DataTable AddTwoTable(List<ProductReview> products)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("ProductId", typeof(int));
+            table.Columns.Add("UserId", typeof(int));
+            table.Columns.Add("Rating", typeof(int));
+            table.Columns.Add("Review", typeof(string));
+            table.Columns.Add("IsLike", typeof(bool));
+            foreach(var data in products)
+            {
+                table.Rows.Add(data.ProductId, data.UserId, data.Rating, data.Review, data.IsLike);
+            }
+            return table;
+        }
         public void Display(IEnumerable<ProductReview> result)
         {
             foreach (var item in result)
